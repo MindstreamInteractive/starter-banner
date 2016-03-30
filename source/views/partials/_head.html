@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <meta name="ad.size" content="width=@@width,height=@@height"/>
+
+    <title>Massage Envy Banners</title>
+
+    <link rel="stylesheet" href="main.css" />
+
+    <script>
+	  function getParameterByName(name) {
+	    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+	    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+	        results = regex.exec(location.search);
+	    return results == null ? "" :
+	    decodeURIComponent(results[1].replace(/\+/g, " "));
+	  }
+
+	  var clickTag = getParameterByName("clickTag");
+	</script>
+</head>
+<body>
+    <a href="javascript:(function(){window.open(window.clickTag, '_blank')}());" id="clickArea">
