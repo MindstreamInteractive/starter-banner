@@ -25,7 +25,7 @@ $.gulp.task('watching', function() {
     $.gulp.watch(config.src + 'styles/**/*.scss', ['styles']);
     $.gulp.watch(config.src + 'images/**/*.{png,jpg,jpeg,gif,svg}', ['images']);
     $.gulp.watch(config.src + 'scripts/**/*.js', ['scripts']);
-    $.gulp.watch(config.src + 'static/**/*', ['copy']);
+    $.gulp.watch([config.src + 'static/**/*', config.src + 'views/**/manifest.js'], ['copy']);
     $.gulp.watch(config.watchDest, function(e) {
         $.gulp.src(e.path)
             .pipe(browserSync.reload({ stream:true }));

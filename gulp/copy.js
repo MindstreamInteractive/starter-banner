@@ -9,4 +9,11 @@ $.gulp.task('copy', function() {
 
     $.gulp.src(config.src + 'views/index.html')
         .pipe($.gulp.dest(config.dest));
+
+    // Copy manifest.js files
+    for (var i = 0; i < config.folders.length; i++) {
+        $.gulp.src(config.src + 'views/templates/' + config.folders[i] + '/manifest.js')
+            .pipe($.plumber())
+            .pipe($.gulp.dest(config.dest + config.folders[i]));
+    }
 });
