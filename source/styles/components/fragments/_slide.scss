@@ -4,11 +4,13 @@
 
 .slide {
     position: absolute;
-    transform: rotate(45deg);
     z-index: z(slide);
 
     .res-300x250 & {
+        left: -35px;
+        top: -107px;
         width: 300px;
-        height: 250px;
+        height: 391px;
+        transform: rotate(45deg);
     }
 }
