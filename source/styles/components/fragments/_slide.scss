@@ -1,3 +1,14 @@
 /**
- * Slides
+ * Slide
  */
+
+.slide {
+    position: absolute;
+    transform: rotate(45deg);
+    z-index: z(slide);
+
+    .res-300x250 & {
+        width: 300px;
+        height: 250px;
+    }
+}

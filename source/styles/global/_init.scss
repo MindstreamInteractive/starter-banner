@@ -1,9 +1,12 @@
 @import '../global/vars';
 @import '../global/base';
+@import '../global/map-getters';
+@import '../global/mixins';
 @import '../components/fragments/container';
 
+@import '../components/fragments/bg';
+@import '../components/fragments/cream';
 @import '../components/fragments/cta';
-@import '../components/fragments/foot';
-@import '../components/fragments/logo';
+@import '../components/fragments/razor';
 @import '../components/fragments/slide';
 @import '../components/fragments/slides';

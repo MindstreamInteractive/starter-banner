@@ -20,11 +20,22 @@ $.gulp.task('lint-js', function() {
 
 
 $.gulp.task('scripts', ['lint-js'], function() {
-	for (var i = 0; i < config.folders.length; i++) {
-	    $.gulp.src(config.src + 'scripts/main-' + config.folders[i] + '.js')
-	        .pipe($.plumber())
-	        .pipe($.should(config.prod, uglify()))
-			.pipe(rename('main.js'))
-	        .pipe($.gulp.dest(config.dest + config.folders[i] + '/js/'));
+    for (var b = 0; b < config.banners.length; b++) {
+        var banner = config.banners[b];
+
+		for (var i = 0; i < config.sizes.length; i++) {
+			var size = config.sizes[i];
+
+			$.gulp.src([config.src + 'scripts/main.js', config.src + 'scripts/'+ banner +'/main-' + size + '.js'])
+		        .pipe($.plumber())
+				.pipe(concat('main.js'))
+		        .pipe($.should(config.prod, uglify()))
+				.pipe($.gulp.dest(config.dest + '/' + banner + '/' + size + '/scripts'));
+
+			// Copy manifest.js files
+			$.gulp.src(config.src + 'views/banners/' + banner + '/' + size + '/manifest.js')
+				.pipe($.plumber())
+				.pipe($.gulp.dest(config.dest + '/' + banner + '/' + size));
+		}
 	}
 });

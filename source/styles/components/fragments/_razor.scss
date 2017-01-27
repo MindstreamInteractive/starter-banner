@@ -1,0 +1,12 @@
+/**
+ * Razor
+ */
+
+.razor {
+    position: absolute;
+    z-index: z('razor');
+
+    .res-300x250 & {
+        transform: translate(74px, -592px);
+    }
+}

@@ -1,0 +1,44 @@
+/**
+ * Cream
+ */
+
+.cream {
+    position: absolute;
+    z-index: z('cream');
+
+    &__layer {
+        position: absolute;
+        z-index: z('cream') + 1;
+
+        > img {
+            display: block;
+        }
+
+        &--c {
+            z-index: z('cream') + 2;
+        }
+    }
+
+    .res-300x250 & {
+        &__layer {
+            &--c {
+                width: 140px;
+                height: 391px;
+                transform: translate(79px, -71px);
+            }
+
+            &--r {
+                width: 147px;
+                height: 271px;
+                transform: translate(210px, -24px);
+            }
+
+            &--l {
+                width: 147px;
+                height: 270px;
+                transform: translate(-52px, 12px);
+            }
+
+        }
+    }
+}

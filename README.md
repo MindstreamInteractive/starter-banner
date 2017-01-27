@@ -1,24 +1,14 @@
-# Banner ad Boilerplate
+# World Vision - Holiday Banners
 
-This is structured to build banners for the Digital Addix serving platform, but should work for other platforms as well with minimal modification.
-
-## Usage
-
-First, the set up:
-
-* Dependencies: node, (node) sass, gulp
-* To install dependencies, run `npm install`.
-* `gulp` will build the ads
-* `gulp watch` will set-up watch, watchify, browser-sync
-* `gulp prod` will build the banners with minified/uglified/optimized assets in to an organized file structured
-
-The starter is set up for 5 sizes of banners:
-
-* 160x600
 * 300x250
 * 300x600
 * 728x90
 * 970x250
+
+## Staging Server:
+
+* http://clients.msistg.com/world-vision/holiday-banners/
+
 
 The file structure follows the Digital Addix guidelines and is as follows:
 

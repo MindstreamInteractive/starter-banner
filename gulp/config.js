@@ -7,10 +7,14 @@ module.exports = {
     outputJadeIncludes: true,
     watchDest: ['output/**/*', '!output/**/*.html'],
     extensionlessRoutes: false, // WARNING: Experimental
-    folders: [
-        '160x600',
+    banners: [
+        'barbasol',
+        'puresilk'
+    ],
+    sizes: [
         '300x250',
-        '320x50',
+        '160x600',
         '728x90',
+        '320x50'
     ]
 };

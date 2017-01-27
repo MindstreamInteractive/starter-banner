@@ -21,8 +21,10 @@ html {
 }
 
 body {
-    font: 62.5%/1.25 $regular;
-    background: white;
+    background: #ffffff;
+    font-size: 100%;
+    font-family: $regular;
+    line-height: 1;
 }
 
 body,

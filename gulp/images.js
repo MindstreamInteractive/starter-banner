@@ -4,19 +4,25 @@ var config = require('./config.js');
 var imagemin = require('gulp-imagemin');
 
 $.gulp.task('images', function() {
-    for (var i = 0; i < config.folders.length; i++) {
-        $.gulp.src(config.src + 'images/**/*' + config.folders[i] + '.{png,jpg,jpeg,gif,svg}')
-            .pipe($.should(config.prod, imagemin({
-                progressive: true,
-                interlaced: true
-            })))
-            .pipe($.gulp.dest(config.dest + config.folders[i] + '/assets'));
+    for (var b = 0; b < config.banners.length; b++) {
+        var banner = config.banners[b];
 
-        $.gulp.src([config.src + 'images/**/*.{png,jpg,jpeg,gif,svg}', '!' + config.src + 'images/**/*0.{png,jpg,jpeg,gif,svg}'])
-            .pipe($.should(config.prod, imagemin({
-                progressive: true,
-                interlaced: true
-            })))
-            .pipe($.gulp.dest(config.dest + config.folders[i] + '/assets'));
+        for (var i = 0; i < config.sizes.length; i++) {
+            var size = config.sizes[i];
+
+            $.gulp.src(config.src + 'images/'+ banner +'/**/*' + size + '.{png,jpg,jpeg,gif,svg}')
+                .pipe($.should(config.prod, imagemin({
+                    progressive: true,
+                    interlaced: true
+                })))
+                .pipe($.gulp.dest(config.dest + '/'+ banner + '/' + size + '/images'));
+
+            $.gulp.src([config.src + 'images/'+ banner +'/**/*.{png,jpg,jpeg,gif,svg}', '!' + config.src + 'images/'+ banner +'/**/*0.{png,jpg,jpeg,gif,svg}'])
+                .pipe($.should(config.prod, imagemin({
+                    progressive: true,
+                    interlaced: true
+                })))
+                .pipe($.gulp.dest(config.dest + '/'+ banner +'/' + size + '/images'));
+        }
     }
 });

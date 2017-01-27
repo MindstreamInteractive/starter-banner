@@ -5,10 +5,16 @@ $fallback: Helvetica, Arial, sans-serif;
 $regular: '', $fallback;
 $reg: $regular;
 
-$purple:        #786CB1;
-$teal:          #03adb2;
-$yellow:        #fee21a;
-
-$border:        #e9ebed;
+$border:        #000000;
 $light:         #C6C5E4;
 $text:          #FFFFFF;
+
+$z-index: (
+    'container': 1,
+    'bg': 1,
+    'cta': 3,
+    'slide': 4,
+    'cream': 5,
+    'razor': 10,
+    'container-border': 20
+);
